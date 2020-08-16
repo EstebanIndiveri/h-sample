@@ -1,4 +1,4 @@
-import React,{useState, useMemo} from 'react'
+import React,{useState, useMemo, Fragment} from 'react'
 import { heroes } from '../../data/heroes';
 import HeroCard from '../heroes/HeroCard';
 import { useLocation } from 'react-router-dom';
@@ -56,8 +56,16 @@ const SearchScreen = ({history}) => {
                     </form>
                 </div>
                 <div className="col-7">
-                    <h4>Results</h4>
-                    <hr/>
+                    {(q!==''&&heroesFilter.length>0)?(<Fragment>
+                        <h4>Results from {` ${q}`}</h4>
+                        <hr/>
+                    </Fragment>):
+                    <Fragment>
+                        <h4>Results</h4>
+                        <hr/>
+                    </Fragment>
+                    }
+                    
                     {
                         ((q==='')&&(<div className="alert alert-info">
                         Search a hero
