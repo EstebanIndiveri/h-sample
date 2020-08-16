@@ -3,20 +3,19 @@ import{
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    // Link
 }from 'react-router-dom'
-import { Navbar } from '../components/ui/NavBar';
 import LoginScreen from '../components/login/LoginScreen';
-import MarvelScreen from '../components/marvel/MarvelScreen';
+import DashboardRoutes from './DashboardRoutes';
 
 const AppRouter = () => {
     return ( 
         <Router>
       <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Switch>
-            <Route exact path='/' component={LoginScreen}/>
-            <Route exact path='/' component={MarvelScreen}/>
+            <Route exact path='/login' component={LoginScreen}/>
+            <Route path='/' component={DashboardRoutes}/>
         </Switch>
       </div>
     </Router>
