@@ -1,5 +1,5 @@
 import React,{useState, useMemo, Fragment} from 'react'
-import { heroes } from '../../data/heroes';
+// import { heroes } from '../../data/heroes';
 import HeroCard from '../heroes/HeroCard';
 import { useLocation } from 'react-router-dom';
 import getHeroesByName from '../../selectors/getHeroesByName';
@@ -14,9 +14,9 @@ const SearchScreen = ({history}) => {
     const {name}=value; //QUERY SEARCH PARAM
     const heroesFilter=useMemo(() =>getHeroesByName(q),[q])
     // const heroesFilter=getHeroesByName(name); //ALL DATA
-    const reset=()=>{ //RESET INPUT
-        setValue('');
-    };
+    // const reset=()=>{ //RESET INPUT
+    //     setValue('');
+    // };
     const handleSubmit=(e)=>{ //SUBMIT FORM
         e.preventDefault();
         history.push(`?q=${name}`);

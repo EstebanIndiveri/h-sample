@@ -22,7 +22,7 @@ const HeroScreen = ({history}) => {
         }
     };
 
-    const{id,superhero,publisher,alter_ego,first_appearance,characters}=hero;
+    const{superhero,publisher,alter_ego,first_appearance,characters}=hero;
 
     return ( 
         <div className="row mt-5">
