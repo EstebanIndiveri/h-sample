@@ -6,13 +6,14 @@ const LoginScreen = ({history}) => {
     const {dispatch} = useContext(AuthContext);
     const handleClick=()=>{
         // history.push('/marvel');
+        const lastPath=localStorage.getItem('lastPath') || '/';
         dispatch({
             type:types.login,
             payload:{
                 name:'Esteban'
             }
         });
-        history.replace('/');
+        history.replace(lastPath);
 
     }
     return ( 
